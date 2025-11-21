@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OIS-Calculator — Fixed Grid (CE + ENTER)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <div class="calc" role="application" aria-label="Calculator"> 
+      <div class="display" aria-live="polite">
+        <div id="expr" class="expression" aria-hidden="true">0</div>
+        <div id="out" class="output" aria-live="polite">0</div>
+      </div>
+
+      <div class="pad" id="pad" role="grid" aria-label="Calculator keys">
+        <!-- Row 1 -->
+        <button data-action="percent" aria-label="percent">%</button>
+        <button data-action="paren" data-value="(" aria-label="open parenthesis">(</button>
+        <button data-action="paren" data-value=")" aria-label="close parenthesis">)</button>
+        <button data-action="clear" class="ce" aria-label="clear entry">CE</button>
+
+        <!-- Row 2 -->
+        <button data-value="7">7</button>
+        <button data-value="8">8</button>
+        <button data-value="9">9</button>
+        <button data-action="op" data-value="/" aria-label="divide">÷</button>
+
+        <!-- Row 3 -->
+        <button data-value="4">4</button>
+        <button data-value="5">5</button>
+        <button data-value="6">6</button>
+        <button data-action="op" data-value="*" aria-label="multiply">×</button>
+
+        <!-- Row 4 -->
+        <button data-value="1">1</button>
+        <button data-value="2">2</button>
+        <button data-value="3">3</button>
+        <button data-action="minus" aria-label="subtract">-</button>
+
+        <!-- Row 5 -->
+        <button data-action="sqrt" aria-label="plus minus or square root">±√</button>
+        <button data-value="0">0</button>
+        <button data-value=".">.</button>
+
+        <button data-action="plus" class="op" aria-label="add">+</button>
+      </div>
+
+      <div class="bottom-row" role="toolbar" aria-label="additional controls">
+        <!-- ENTER -->
+        <button class="enter" data-action="enter" aria-label="enter">ENTER</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
