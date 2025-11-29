@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>OIBSIP — Home</title>
+    <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="brand">
+                <h1>OIBSIP Projects</h1>
+                <p class="subtitle">By S.V Karthigeyan</p>
+            </div>
+
+            <nav class="nav">
+                <button id="logoutBtn" class="btn btn-logout">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main">
+
+        <div class="hero">
+            <div class="hero-inner">
+                <h2>Welcome to the OIBSIP Website</h2>
+                <p class="lead">
+                    This contains 4 internship projects demonstrating HTML, CSS & JavaScript skills.
+                    Explore each task to see the implementation.
+                </p>
+            </div>
+        </div>
+
+        <div class="tasks">
+
+            <div class="task-card">
+                <h3>Task 1 — Calculator</h3>
+                <p class="task-desc">
+                    A calculator made using HTML, CSS, and JavaScript. Supports four basic arithmetic operations.
+                </p>
+                <a class="task-link" href="Task1/index.html">Open Task 1</a>
+            </div>
+
+            <div class="task-card">
+                <h3>Task 2 — Tribute Page</h3>
+                <p class="task-desc">
+                    A tribute page demonstrating structured HTML, CSS, and responsive layout.
+                </p>
+                <a class="task-link" href="Task2/index.html">Open Task 2</a>
+            </div>
+
+            <div class="task-card">
+                <h3>Task 3 — To-Do List</h3>
+                <p class="task-desc">
+                    A to-do list app with add, edit, delete, and complete options using localStorage for data saving.
+                </p>
+                <a class="task-link" href="Task3/index.html">Open Task 3</a>
+            </div>
+
+            <div class="task-card">
+                <h3>Task 4 — Login Authentication</h3>
+                <p class="task-desc">
+                    A login authentication system using HTML, CSS, and JS with signup, login, and logout functionality.
+                </p>
+                <a class="task-link" href="login.html">Open Task 4</a>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>© <span id="year"></span> S.V Karthigeyan — Oasis Infobyte Internship Projects</p>
+    </footer>
+
+    <script>
+        if (localStorage.getItem("loggedIn") !== "true") {
+            window.location.href = "login.html";
+        }
+
+        document.getElementById("logoutBtn").addEventListener("click", function () {
+            localStorage.removeItem("loggedIn");
+            window.location.href = "login.html";
+        });
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

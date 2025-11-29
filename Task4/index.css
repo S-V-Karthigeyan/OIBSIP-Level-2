@@ -1,0 +1,142 @@
+html {
+    font-size: 16px;
+}
+
+h2 { 
+    font-size: clamp(1.25rem, 2.2vw, 1.6rem); 
+    margin-bottom: 8px; 
+}
+
+body { 
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25rem;
+}
+
+.box {
+    width: min(420px, 100%);
+    background: rgba(26, 26, 26, 0.85);
+    backdrop-filter: blur(6px);
+    padding: clamp(1rem, 3.5vw, 2rem);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(255, 140, 0, 0.18);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem 0.9rem;
+    margin: 0.6rem 0;
+    background: #111;
+    border: 1px solid #333;
+    color: #f0f0f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input:focus {
+    border-color: rgba(255, 167, 51, 0.9);
+    box-shadow: 0 0 0 4px rgba(255, 167, 51, 0.06);
+}
+
+input::placeholder {
+    color: #b3b3b3;
+}
+
+button {
+    width: 100%;
+    padding: 0.9rem;
+    background: linear-gradient(90deg, #ff8c00, #ffa733);
+    color: #0d0d0d;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top: 0.6rem;
+    transition: transform 120ms ease, filter 120ms;
+}
+
+button:hover,
+button:focus {
+    transform: translateY(-1px);
+    filter: brightness(1.02);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.error {
+    color: #ff4d4d;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+    min-height: 1.25em;
+}
+
+.link-text {
+    margin-top: 0.9rem;
+    color: #cccccc;
+    font-size: 0.95rem;
+}
+
+a {
+    color: #ffa733;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    html { 
+    font-size: 15px;
+    }
+
+    .box {
+    padding: 1rem;
+    border-radius: 10px; 
+    }
+    input, button {
+    border-radius: 10px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 900px) {
+    html {
+    font-size: 16px;
+    }
+    
+    .box {
+    width: min(480px, 92%);
+    }
+}
+
+@media (min-width: 901px) {
+    html {
+    font-size: 17px;
+    }
+
+    .box {
+    width: 380px;
+    padding: 28px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    button, input {
+    transition: none !important;
+    }
+}
