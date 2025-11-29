@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OIBSIP - Sign Up</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="box">
+    <h2>Sign Up</h2>
+    <p class="error" id="error" aria-live="polite"></p>
+
+    <input type="text" id="username" placeholder="Username" autocomplete="username" />
+    <input type="password" id="password" placeholder="Password" autocomplete="new-password" />
+    <input type="password" id="confirm" placeholder="Confirm Password" autocomplete="new-password" />
+
+    <button id="signupBtn" onclick="signup()">Sign Up</button>
+
+    <p class="link-text">Already have an account? <a href="login.html">Login here</a></p>
+</div>
+
+<script>
+    function signup() {
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value;
+        const confirm = document.getElementById("confirm").value;
+        const error = document.getElementById("error");
+
+        error.innerText = "";
+
+        if (!username || !password) {
+            error.innerText = "All fields are required!";
+            return;
+        }
+
+        if (password !== confirm) {
+            error.innerText = "Passwords do not match!";
+            return;
+        }
+
+        const user = { username, password };
+        localStorage.setItem("user", JSON.stringify(user));
+
+        alert("Sign Up Successful!");
+        window.location.href = "login.html";
+    }
+
+    document.querySelectorAll('input').forEach(input =>
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') document.getElementById('signupBtn').click();
+        })
+    );
+</script>
+
+</body>
+</html>
